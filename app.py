@@ -46,21 +46,22 @@ def gaitems():
         cursor.execute("""INSERT INTO Grocery_List (Title,createdBy,ID,createdAt)
         VALUES(%s,%s,%s,%s)""",(new_item,item_created_by,uuid.uuid4(),today))
         conn.commit()
-        return ("Item has been added succesfully"),200 
+        return ("Item has been added succesfully"),200
+            
     
     if request.method == "DELETE":
         new_item=request.form['Title']
         item_created_by=request.form['createdBy']
         cursor.execute("""DELETE FROM Grocery_List WHERE Title=%s and createdBy=%s""",(new_item,item_created_by))
         conn.commit()
-        return "Item has been deleted succesfully",202
+        return ("Item has been deleted succesfully"),200
     
     if request.method == "PUT":
         new_item=request.form['Title']
         item_created_by=request.form['createdBy']
         cursor.execute("""UPDATE Grocery_List SET Title=%s WHERE createdBy=%s""",(new_item,item_created_by))
         conn.commit()
-        return "Item has been edited succesfully",202
+        return "Item has been edited succesfully",200
     
 
 
@@ -83,13 +84,7 @@ def single_item(createdBy):
         else:
             return "Something is wrong", 404
         
-    if request.method == "DELETE":
-        new_item=request.form['Title']
-        cursor.execute("""DELETE FROM Grocery_List WHERE Title=%s""",(new_item))
-        conn.commit()
-        return "Book has been deleted succesfully",202
-
 
 #server
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
