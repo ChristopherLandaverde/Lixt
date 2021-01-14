@@ -1,6 +1,6 @@
 # grocery_list
 
-This is version 1 for Project Alice White.
+This is version 1 for Project Aliceblue.
 
 Completed Tasks:
 - Developer would be able to recieve all information in the app with a GET request.
