@@ -40,10 +40,10 @@ http://127.0.0.1:5000/v1
 ## View List
 | Method | Action                                                           | Entry Required                           |
 |--------|------------------------------------------------------------------|------------------------------------------|
-| GET    | Retrieves all items for the shopping list.                       | **Title createdBy** Capitalization Required* |
-| PUT    | Creates Items, User,ID, Current Date to add to the shopping list | **Title  createdBy** CapitalizationRequired*  |
-| DELETE | Deletes Singular Item Created by Specific User.                  | **Title createdBy** CapitalizationRequired*  |
-| PUT    | Edits Singular Item Created by Specific User.                    | **Title createdBy** CapitalizationRequired*  |
+| GET    | Retrieves all items for the shopping list.                       | **name createdBy** Capitalization Required* |
+| PUT    | Creates Items, User,ID, Current Date to add to the shopping list | **name  createdBy** CapitalizationRequired*  |
+| DELETE | Deletes Singular Item Created by Specific User.                  | **name createdBy** CapitalizationRequired*  |
+| PUT    | Edits Singular Item Created by Specific User.                    | **name createdBy** CapitalizationRequired*  |
 
 
 ### RETRIEVE ALL PRODUCTS
@@ -56,7 +56,7 @@ Request: `GET http://127.0.0.1:5000/v1/`
 {
 [
 {
-    "Title": "Whoa",
+    "name": "Whoa",
     "createdAt": "Wed, 13 Jan 2021 16:50:01 GMT",
     "createdBy": null,
     "id": "c2be757d-55aa-4a6f-8fcc-44aad50420c2",
@@ -65,7 +65,7 @@ Request: `GET http://127.0.0.1:5000/v1/`
     "userID": null
   },
   {
-    "Title": "All Bran",
+    "name": "All Bran",
     "createdAt": "Wed, 13 Jan 2021 17:26:15 GMT",
     "createdBy": "Chris",
     "id": "db21455f-dd9a-45c1-93f0-4c1bda7edc60",
@@ -119,7 +119,7 @@ Response
 
 ```json
 {
-    "Title": "Nope",
+    "name": "Nope",
     "createdAt": "Wed, 13 Jan 2021 16:39:35 GMT",
     "createdBy": "Chris",
     "id": "63a68dbf-a7a4-4d61-9cad-97bc19ebd55b",
@@ -128,7 +128,7 @@ Response
     "userID": null
   },
   {
-    "Title": "Sour",
+    "name": "Sour",
     "createdAt": "Wed, 13 Jan 2021 16:39:39 GMT",
     "createdBy": "Chris",
     "id": "08d38769-0076-49fd-95fa-52232d677639",
@@ -137,7 +137,7 @@ Response
     "userID": null
   },
   {
-    "Title": "All Bran",
+    "name": "All Bran",
     "createdAt": "Wed, 13 Jan 2021 17:26:15 GMT",
     "createdBy": "Chris",
     "id": "db21455f-dd9a-45c1-93f0-4c1bda7edc60",
