@@ -17,7 +17,7 @@ mysql = MySQL(app)
 def db_connection():
     conn = None
     try:
-        conn = pymysql.connect(host="us-cdbr-east-03.cleardb.com",database="heroku_f5879903a4c3f63",user="be28232db9c2a4",password='eb3b45b0',cursorclass=pymysql.cursors.DictCursor)
+        conn = pymysql.connect(host="127.0.0.1:3306",database="newdb",user="root",password='land0627',cursorclass=pymysql.cursors.DictCursor)
         cursor = conn.cursor() 
     except pymysql.Error as err:
         print("Something went wrong: {}".format(err))
@@ -33,7 +33,7 @@ def gaitems():
     if request.method == "GET":
         cursor.execute("SELECT * FROM Grocery_List")
         items=[
-            dict(id=row['ID'],userID=row['UserID'],Title=row['Title'],
+            dict(id=row['ID'],userID=row['UserID'],name=row['name'],
                  createdAt=row['createdAt'],createdBy=row['createdBy'],lastEdited=row['lastEdited'],lastEditedBy=row['lastEditedBy'])
                  for row in cursor.fetchall()
                  ]
@@ -41,25 +41,25 @@ def gaitems():
             return jsonify(items)
     
     if request.method == "POST":
-        new_item=request.form['Title']
+        new_item=request.form['name']
         item_created_by=request.form['createdBy']
-        cursor.execute("""INSERT INTO Grocery_List (Title,createdBy,ID,createdAt)
+        cursor.execute("""INSERT INTO Grocery_List (name,createdBy,ID,createdAt)
         VALUES(%s,%s,%s,%s)""",(new_item,item_created_by,uuid.uuid4(),today))
         conn.commit()
         return ("Item has been added succesfully"),200
             
     
     if request.method == "DELETE":
-        new_item=request.form['Title']
+        new_item=request.form['name']
         item_created_by=request.form['createdBy']
-        cursor.execute("""DELETE FROM Grocery_List WHERE Title=%s and createdBy=%s""",(new_item,item_created_by))
+        cursor.execute("""DELETE FROM Grocery_List WHERE name=%s and createdBy=%s""",(new_item,item_created_by))
         conn.commit()
         return ("Item has been deleted succesfully"),200
     
     if request.method == "PUT":
-        new_item=request.form['Title']
+        new_item=request.form['name']
         item_created_by=request.form['createdBy']
-        cursor.execute("""UPDATE Grocery_List SET Title=%s WHERE createdBy=%s""",(new_item,item_created_by))
+        cursor.execute("""UPDATE Grocery_List SET name=%s WHERE createdBy=%s""",(new_item,item_created_by))
         conn.commit()
         return "Item has been edited succesfully",200
     
@@ -75,7 +75,7 @@ def single_item(createdBy):
     if request.method == "GET":
         cursor.execute("""SELECT * FROM Grocery_List WHERE createdBy=%s""",(createdBy))
         items=[
-            dict(id=row['ID'],userID=row['UserID'],Title=row['Title'],createdAt=row['createdAt'],createdBy=row['createdBy'],lastEdited=row['lastEdited'],lastEditedBy=row['lastEditedBy'])
+            dict(id=row['ID'],userID=row['UserID'],name=row['name'],createdAt=row['createdAt'],createdBy=row['createdBy'],lastEdited=row['lastEdited'],lastEditedBy=row['lastEditedBy'])
             for row in cursor.fetchall()]
         for r in items:
             book = r
