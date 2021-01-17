@@ -13,11 +13,13 @@ app = Flask(__name__)
 mysql = MySQL(app)
 
 
+
+
 #Initalize Database Connection 
 def db_connection():
     conn = None
     try:
-        conn = pymysql.connect(host="127.0.0.1:3306",database="newdb",user="root",password='land0627',cursorclass=pymysql.cursors.DictCursor)
+        conn = pymysql.connect(host="127.0.0.1",database="FLAPI",user="root",password='land0627',cursorclass=pymysql.cursors.DictCursor)
         cursor = conn.cursor() 
     except pymysql.Error as err:
         print("Something went wrong: {}".format(err))
@@ -41,8 +43,14 @@ def gaitems():
             return jsonify(items)
     
     if request.method == "POST":
-        new_item=request.form['name']
-        item_created_by=request.form['createdBy']
+        if request.mimetype == 'application/json':
+            data = request.get_json(force=True)
+            new_item=data['name']
+            item_created_by=data['createdBy']
+        else:
+            new_item=request.form['name']
+            item_created_by=request.form['createdBy']
+
         cursor.execute("""INSERT INTO Grocery_List (name,createdBy,ID,createdAt)
         VALUES(%s,%s,%s,%s)""",(new_item,item_created_by,uuid.uuid4(),today))
         conn.commit()
@@ -87,4 +95,4 @@ def single_item(createdBy):
 
 #server
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)
