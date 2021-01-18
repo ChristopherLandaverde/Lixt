@@ -12,7 +12,7 @@ import pymysql
 app = Flask(__name__)
 mysql = MySQL(app)
 
-
+#Ignore this
 
 
 #Initalize Database Connection 
