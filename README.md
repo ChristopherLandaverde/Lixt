@@ -23,6 +23,11 @@ Install and update using pip:
 ```python
 pip install -r requirements.txt 
 ```
+Requirements
+```python
+python v3.9.1
+mysql v8.0.22
+```
 
 Run Server:
 ```python
