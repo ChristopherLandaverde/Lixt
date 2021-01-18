@@ -1,6 +1,8 @@
 from flask import Flask,request,jsonify
 import datetime
+import configparser
 from flask_mysqldb import MySQL 
+import os
 import uuid
 from uuid import uuid4
 
@@ -8,11 +10,27 @@ from uuid import uuid4
 app = Flask(__name__)
 
 
-#Trying Database Connection
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'land0627'
-app.config['MYSQL_DB'] = 'FLAPI'
+# Configuring Environment Variables
+
+config = configparser.ConfigParser()
+config.read('.env')
+
+
+# Local DB Configuration
+
+app.config['MYSQL_USER'] = config['local']['user']
+app.config['MYSQL_PASSWORD'] = config['local']['password']
+app.config['MYSQL_DB'] = config['local']['database']
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
+
+
+### Heroku Configuration
+
+#app.config['MYSQL_USER'] = config['heroku']['user']
+#app.config['MYSQL_HOST'] = config['heroku']['host']
+#app.config['MYSQL_PASSWORD'] = config['heroku']['password']
+#app.config['MYSQL_DB'] = config['heroku']['database']
+#app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
 
 
