@@ -3,7 +3,7 @@ import datetime
 from flask_mysqldb import MySQL 
 import uuid
 from uuid import uuid4
-import pymysql
+
 
 app = Flask(__name__)
 
