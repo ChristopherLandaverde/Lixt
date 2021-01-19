@@ -2,7 +2,6 @@ from flask import Flask,request,jsonify
 import datetime
 import configparser
 from flask_mysqldb import MySQL 
-import os
 import uuid
 from uuid import uuid4
 
