@@ -34,7 +34,7 @@ python app.py
 
 Run linting:
 ```bash
-pylint ./app.py
+pylint ./*.py
 ```
 
 ## Initalize SQL DB locally
