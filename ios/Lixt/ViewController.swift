@@ -41,6 +41,10 @@ let sampleDataItems: [GroceryItem] = [
   createTestGroceryItem(name: "Eggs"),
 ]
 
+func getGroceryItems() {
+
+}
+
 class GroceryMainViewController: UIViewController {
   enum Section {
     case main
@@ -50,6 +54,7 @@ class GroceryMainViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    title = "Lixt"
     view.backgroundColor = .systemBackground
 
     let collectionViewLayoutConfiguration = UICollectionLayoutListConfiguration.init(appearance: .plain)

@@ -13,6 +13,8 @@
 		646D207225B22DDD00AE2F45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 646D207025B22DDD00AE2F45 /* Main.storyboard */; };
 		646D207425B22DE000AE2F45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 646D207325B22DE000AE2F45 /* Assets.xcassets */; };
 		646D207725B22DE000AE2F45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 646D207525B22DE000AE2F45 /* LaunchScreen.storyboard */; };
+		64F5B69B25B3AE44003ED1FF /* Groceries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F5B69A25B3AE44003ED1FF /* Groceries.swift */; };
+		8CC57C58CFA1937FF15FC1BA /* Pods_Lixt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C5C2F458A1700CA6F7D3F7D /* Pods_Lixt.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,10 @@
 		646D207325B22DE000AE2F45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		646D207625B22DE000AE2F45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		646D207825B22DE000AE2F45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64F5B69A25B3AE44003ED1FF /* Groceries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groceries.swift; sourceTree = "<group>"; };
+		7C5C2F458A1700CA6F7D3F7D /* Pods_Lixt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lixt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC68085E0D473C6C80985628 /* Pods-Lixt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lixt.debug.xcconfig"; path = "Target Support Files/Pods-Lixt/Pods-Lixt.debug.xcconfig"; sourceTree = "<group>"; };
+		B5D1E1B50470FF072B335ABA /* Pods-Lixt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lixt.release.xcconfig"; path = "Target Support Files/Pods-Lixt/Pods-Lixt.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CC57C58CFA1937FF15FC1BA /* Pods_Lixt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38D689E83C419B658231C197 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AC68085E0D473C6C80985628 /* Pods-Lixt.debug.xcconfig */,
+				B5D1E1B50470FF072B335ABA /* Pods-Lixt.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		646D205E25B22DDD00AE2F45 = {
 			isa = PBXGroup;
 			children = (
 				646D206925B22DDD00AE2F45 /* Lixt */,
 				646D206825B22DDD00AE2F45 /* Products */,
+				38D689E83C419B658231C197 /* Pods */,
+				BA3AE9C517AD84C85FACDE33 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +75,7 @@
 		646D206925B22DDD00AE2F45 /* Lixt */ = {
 			isa = PBXGroup;
 			children = (
+				64F5B69925B3AE34003ED1FF /* Stores */,
 				646D206A25B22DDD00AE2F45 /* AppDelegate.swift */,
 				646D206C25B22DDD00AE2F45 /* SceneDelegate.swift */,
 				646D206E25B22DDD00AE2F45 /* ViewController.swift */,
@@ -67,6 +87,22 @@
 			path = Lixt;
 			sourceTree = "<group>";
 		};
+		64F5B69925B3AE34003ED1FF /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				64F5B69A25B3AE44003ED1FF /* Groceries.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		BA3AE9C517AD84C85FACDE33 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C5C2F458A1700CA6F7D3F7D /* Pods_Lixt.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 646D207B25B22DE000AE2F45 /* Build configuration list for PBXNativeTarget "Lixt" */;
 			buildPhases = (
+				D0DCA9548D23F61F50C7E64F /* [CP] Check Pods Manifest.lock */,
 				646D206325B22DDD00AE2F45 /* Sources */,
 				646D206425B22DDD00AE2F45 /* Frameworks */,
 				646D206525B22DDD00AE2F45 /* Resources */,
+				62AC7044CCC62AF246760FA5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,12 +170,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		62AC7044CCC62AF246760FA5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Lixt/Pods-Lixt-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Lixt/Pods-Lixt-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Lixt/Pods-Lixt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0DCA9548D23F61F50C7E64F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Lixt-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		646D206325B22DDD00AE2F45 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				646D206F25B22DDD00AE2F45 /* ViewController.swift in Sources */,
+				64F5B69B25B3AE44003ED1FF /* Groceries.swift in Sources */,
 				646D206B25B22DDD00AE2F45 /* AppDelegate.swift in Sources */,
 				646D206D25B22DDD00AE2F45 /* SceneDelegate.swift in Sources */,
 			);
@@ -283,6 +364,7 @@
 		};
 		646D207C25B22DE000AE2F45 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC68085E0D473C6C80985628 /* Pods-Lixt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +384,7 @@
 		};
 		646D207D25B22DE000AE2F45 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5D1E1B50470FF072B335ABA /* Pods-Lixt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
