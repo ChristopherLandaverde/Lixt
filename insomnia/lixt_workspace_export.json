@@ -1,0 +1,180 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2021-01-23T19:24:10.700Z",
+    "__export_source": "insomnia.desktop.app:v2020.5.2",
+    "resources": [
+        {
+            "_id": "req_ccf26654aeb84565b8c5d58aa6b1f705",
+            "parentId": "fld_a8ae4d5f57e647ca8844ab3d52269710",
+            "modified": 1611429344533,
+            "created": 1610736927691,
+            "url": "{{baseUrl}}/{{apiVersion}}/groceries",
+            "name": "View list of groceries",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {},
+            "metaSortKey": -1610737343423.5,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_a8ae4d5f57e647ca8844ab3d52269710",
+            "parentId": "wrk_932affc4e6154f779fb804e1e541f6fc",
+            "modified": 1610737759156,
+            "created": 1610737759156,
+            "name": "Grocery items",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1610737759156,
+            "_type": "request_group"
+        },
+        {
+            "_id": "wrk_932affc4e6154f779fb804e1e541f6fc",
+            "parentId": null,
+            "modified": 1610736903444,
+            "created": 1610736903444,
+            "name": "Lixt",
+            "description": "",
+            "scope": null,
+            "_type": "workspace"
+        },
+        {
+            "_id": "req_e175005f46ec4ec5a5ee0f5a1b283e65",
+            "parentId": "fld_a8ae4d5f57e647ca8844ab3d52269710",
+            "modified": 1611429495122,
+            "created": 1611429455880,
+            "url": "{{baseUrl}}/{{apiVersion}}/groceries",
+            "name": "Create grocery item",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"name\": \"milk\",\n\t\"createdBy\": \"milan\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_b584207af14c45e7a80f71c9fa0bdc41"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1610737343398.5,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_fd91aefd5d00420bb7bf05ec01326a87",
+            "parentId": "fld_a8ae4d5f57e647ca8844ab3d52269710",
+            "modified": 1611429794276,
+            "created": 1611429743399,
+            "url": "{{baseUrl}}/{{apiVersion}}/groceries/12",
+            "name": "Edit grocery item",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"name\": \"bread\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_4986b8fad4e64206aeda2955f665b2c6"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1610737343386,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_f717bb5ecddc4189adba665e90d17ca1",
+            "parentId": "fld_a8ae4d5f57e647ca8844ab3d52269710",
+            "modified": 1611429395948,
+            "created": 1611429369672,
+            "url": "{{baseUrl}}/{{apiVersion}}/groceries/12",
+            "name": "Remove grocery item",
+            "description": "",
+            "method": "DELETE",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {},
+            "metaSortKey": -1610737343373.5,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "env_4ea1876933f2193580a955481d2571cd2ced69d5",
+            "parentId": "wrk_932affc4e6154f779fb804e1e541f6fc",
+            "modified": 1610736958071,
+            "created": 1610736903486,
+            "name": "Base Environment",
+            "data": {
+                "baseUrl": "http://127.0.0.1:5000",
+                "apiVersion": "v1"
+            },
+            "dataPropertyOrder": {
+                "&": [
+                    "baseUrl",
+                    "apiVersion"
+                ]
+            },
+            "color": null,
+            "isPrivate": false,
+            "metaSortKey": 1610736903486,
+            "_type": "environment"
+        },
+        {
+            "_id": "jar_4ea1876933f2193580a955481d2571cd2ced69d5",
+            "parentId": "wrk_932affc4e6154f779fb804e1e541f6fc",
+            "modified": 1610736903488,
+            "created": 1610736903488,
+            "name": "Default Jar",
+            "cookies": [],
+            "_type": "cookie_jar"
+        },
+        {
+            "_id": "spc_b652f75cc1c742c1983994a43e4471b7",
+            "parentId": "wrk_932affc4e6154f779fb804e1e541f6fc",
+            "modified": 1610736903449,
+            "created": 1610736903449,
+            "fileName": "Lixt",
+            "contents": "",
+            "contentType": "yaml",
+            "_type": "api_spec"
+        }
+    ]
+}
