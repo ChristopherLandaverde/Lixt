@@ -34,13 +34,32 @@ Run Server:
 python app.py
 ```
 
+## Initalize SQL DB locally
 
+Migration Script:
+
+```shell
+mysql -u root -p
+```
+
+```SQL
+source file_name
+```
+
+SQL Dumps:
+
+```shell
+ mysql -u root -p FLAPI > flapischema.sql
+```
 
 ## API Endpoint 
 
 ```html
 http://127.0.0.1:5000/v1
+
+
 ```
+
 
 ## View List
 | Method | Action                                                           | Entry Required                           |
