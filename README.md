@@ -36,7 +36,7 @@ python app.py
 
 ## Initalize SQL DB locally
 
-** Must be run within SQL workbench and not bash**
+** Must be run within MySQL shell and not bash**
 
 Migration Script:
 
@@ -174,4 +174,3 @@ Response
 	
 
 ```
-
