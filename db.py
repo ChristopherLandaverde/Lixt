@@ -40,4 +40,3 @@ def db_connection():
     return cursor
 
 
-#Initalize Database Connection 
