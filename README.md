@@ -39,6 +39,8 @@ pylint ./*.py
 
 ## Initalize SQL DB locally
 
+** Must be run within MySQL shell and not bash**
+
 Migration Script:
 
 ```shell
@@ -46,7 +48,7 @@ mysql -u root -p
 ```
 
 ```SQL
-source file_name
+source migration_script.sql
 ```
 
 SQL Dumps:
@@ -175,4 +177,3 @@ Response
 
 
 ```
-
