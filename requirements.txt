@@ -4,3 +4,4 @@ Flask-MySQLdb==0.2.0
 mysql-connector-python==8.0.22
 PyMySQL==1.0.2
 Werkzeug==1.0.1
+pylint=2.6.0

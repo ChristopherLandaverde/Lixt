@@ -9,9 +9,7 @@ Completed Tasks:
 - Developer will be able to delete a grocery item wtih a GET request.
 - Developer will be able to retrieve all orders POST by a user with api parameter.
 
-## How to Install
-
-
+## How to Install & Run
 
 Make Virtual Environment.
 
@@ -21,7 +19,7 @@ virtualenv {virtual environment name}
 
 Install and update using pip:
 ```python
-pip install -r requirements.txt 
+pip install -r requirements.txt
 ```
 Requirements
 ```python
@@ -32,6 +30,11 @@ mysql v8.0.22
 Run Server:
 ```python
 python app.py
+```
+
+Run linting:
+```bash
+pylint ./app.py
 ```
 
 ## Initalize SQL DB locally
@@ -52,7 +55,7 @@ SQL Dumps:
  mysql -u root -p FLAPI > flapischema.sql
 ```
 
-## API Endpoint 
+## API Endpoint
 
 ```html
 http://127.0.0.1:5000/v1
@@ -130,8 +133,8 @@ Request: `PUT http://127.0.0.1:5000/v1`
 Response
 
 ```json
-200 OK - "Item has been edited succesfully". 
-	
+200 OK - "Item has been edited succesfully".
+
 
 ```
 
@@ -169,7 +172,7 @@ Response
     "lastEditedBy": null,
     "userID": null
   },
-	
+
 
 ```
 
