@@ -1,7 +1,9 @@
-from app import app
+from flask import Flask
 from flask_mysqldb import MySQL 
 import configparser
 
+
+app = Flask(__name__)
 
 # Configuring Environment Variables
 
