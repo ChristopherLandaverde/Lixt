@@ -29,9 +29,12 @@ mysql v8.0.22
 
 Run Server:
 ```python
-python app.py
+python rest.py
 ```
-
+Run Pytest:
+```python
+python testapp.py
+```
 Run linting:
 ```bash
 pylint ./*.py
@@ -65,6 +68,13 @@ http://127.0.0.1:5000/v1
 
 ```
 
+## Run Server Unit Test
+
+```python
+python rest.py
+
+
+```
 
 ## View List
 | Method | Action                                                           | Entry Required                           |
@@ -108,7 +118,7 @@ Request: `GET http://127.0.0.1:5000/v1/`
 
 # Create A  GROCERY ITEM
 
-Request : `POST http://127.0.0.1:5000/v1`
+Request : `POST http://127.0.0.1:5000/v1/groceries`
 
 Response:
 
@@ -120,7 +130,7 @@ Response:
 
 # DELETE A PRODUCT
 
-Request: `DELETE  http://127.0.0.1:5000/v1`
+Request: `DELETE  http://127.0.0.1:5000/v1/groceries`
 
 Response:
 
@@ -130,7 +140,7 @@ Response:
 
 # Edit A PRODUCT
 
-Request: `PUT http://127.0.0.1:5000/v1`
+Request: `PUT http://127.0.0.1:5000/v1/groceries/createdBy`
 
 Response
 
