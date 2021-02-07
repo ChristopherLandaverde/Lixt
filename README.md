@@ -57,10 +57,7 @@ Run Server:
 ```python
 python rest.py
 ```
-Run Pytest:
-```python
-python testapp.py
-```
+
 Run linting:
 ```bash
 pylint ./*.py
@@ -89,7 +86,7 @@ SQL Dumps:
 ## API Endpoint
 
 ```html
-http://127.0.0.1:5000/v1
+http://127.0.0.1:5000/v1/groceries
 
 
 ```
@@ -97,7 +94,7 @@ http://127.0.0.1:5000/v1
 ## Run Server Unit Test
 
 ```python
-python rest.py
+pytest testapp.py
 
 
 ```
@@ -106,14 +103,14 @@ python rest.py
 | Method | Action                                                           | Entry Required                           |
 |--------|------------------------------------------------------------------|------------------------------------------|
 | GET    | Retrieves all items for the shopping list.                       | **name createdBy** Capitalization Required* |
-| PUT    | Creates Items, User,ID, Current Date to add to the shopping list | **name  createdBy** CapitalizationRequired*  |
+| POST   | Creates Items, User,ID, Current Date to add to the shopping list | **name  createdBy** CapitalizationRequired* |
 | DELETE | Deletes Singular Item Created by Specific User.                  | **name createdBy** CapitalizationRequired*  |
 | PUT    | Edits Singular Item Created by Specific User.                    | **name createdBy** CapitalizationRequired*  |
 
 
 ### RETRIEVE ALL PRODUCTS
 
-Request: `GET http://127.0.0.1:5000/v1/`
+Request: `GET http://127.0.0.1:5000/v1/groceries`
 
 ### Response
 
@@ -121,22 +118,22 @@ Request: `GET http://127.0.0.1:5000/v1/`
 {
 [
 {
-    "name": "Whoa",
-    "createdAt": "Wed, 13 Jan 2021 16:50:01 GMT",
-    "createdBy": null,
-    "id": "c2be757d-55aa-4a6f-8fcc-44aad50420c2",
-    "lastEdited": "Wed, 13 Jan 2021 21:50:01 GMT",
-    "lastEditedBy": null,
-    "userID": null
+    "ID": "922e4d0f-b2c3-4121-896b-fc24f178340a",
+    "createdBy": "Milan",
+    "lastEdited": "Sat, 06 Feb 2021 13:05:27 GMT",
+    "lastEditedBy": "Milan",
+    "name": "Chicken Fingers",
+    "timeCreated": "Wed, 03 Feb 2021 11:35:52 GMT",
+    "userID": "Milan"
   },
   {
-    "name": "All Bran",
-    "createdAt": "Wed, 13 Jan 2021 17:26:15 GMT",
-    "createdBy": "Chris",
-    "id": "db21455f-dd9a-45c1-93f0-4c1bda7edc60",
-    "lastEdited": "Wed, 13 Jan 2021 22:26:15 GMT",
-    "lastEditedBy": null,
-    "userID": null
+   "ID": "83b9a2d8-a160-4ad3-ad29-c70b4721948b",
+    "createdBy": "Milan",
+    "lastEdited": "Sat, 06 Feb 2021 13:18:44 GMT",
+    "lastEditedBy": "Milan",
+    "name": "Machine",
+    "timeCreated": "Sat, 06 Feb 2021 13:18:44 GMT",
+    "userID": "Milan"
   },
   ]
 }
@@ -150,65 +147,48 @@ Response:
 
 ```json
 
-200 OK - "Item has been added Succesfully"
+200 OK - (ID,name)
 ```
 
 
 # DELETE A PRODUCT
 
-Request: `DELETE  http://127.0.0.1:5000/v1/groceries`
+Request: `DELETE  http://127.0.0.1:5000/v1/groceries/{{ID}}`
 
 Response:
 
 ```json
-200 OK - "Item has been succesfully deleted".
+200 OK -(ID, name) 
+
 ```
 
 # Edit A PRODUCT
 
-Request: `PUT http://127.0.0.1:5000/v1/groceries/createdBy`
+Request: `PUT http://127.0.0.1:5000/v1/groceries/{{ID}}`
 
 Response
 
 ```json
-200 OK - "Item has been edited succesfully".
+200 OK - (ID,name)
 
 
 ```
 
 # Get All Items Ordered by User
 
-Request: `GET http://127.0.0.1:5000/v1/{createdBy}`
+Request: `GET http://127.0.0.1:5000/v1/users?={{userId}}
 
 Response
 
 ```json
-{
-    "name": "Nope",
-    "createdAt": "Wed, 13 Jan 2021 16:39:35 GMT",
-    "createdBy": "Chris",
-    "id": "63a68dbf-a7a4-4d61-9cad-97bc19ebd55b",
-    "lastEdited": "Wed, 13 Jan 2021 21:39:36 GMT",
-    "lastEditedBy": null,
-    "userID": null
-  },
   {
-    "name": "Sour",
-    "createdAt": "Wed, 13 Jan 2021 16:39:39 GMT",
-    "createdBy": "Chris",
-    "id": "08d38769-0076-49fd-95fa-52232d677639",
-    "lastEdited": "Wed, 13 Jan 2021 21:39:39 GMT",
-    "lastEditedBy": null,
-    "userID": null
-  },
-  {
-    "name": "All Bran",
-    "createdAt": "Wed, 13 Jan 2021 17:26:15 GMT",
-    "createdBy": "Chris",
-    "id": "db21455f-dd9a-45c1-93f0-4c1bda7edc60",
-    "lastEdited": "Wed, 13 Jan 2021 22:26:15 GMT",
-    "lastEditedBy": null,
-    "userID": null
+    "ID": "922e4d0f-b2c3-4121-896b-fc24f178340a",
+    "createdBy": "Milan",
+    "lastEdited": "Sat, 06 Feb 2021 13:05:27 GMT",
+    "lastEditedBy": "Milan",
+    "name": "Chicken Fingers",
+    "timeCreated": "Wed, 03 Feb 2021 11:35:52 GMT",
+    "userID": "Milan"
   },
 
 
