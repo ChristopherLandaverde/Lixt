@@ -17,7 +17,7 @@ CREATE SCHEMA IF NOT EXISTS `FLAPI` ;
 -- ----------------------------------------------------------------------------
 -- Table FLAPI.groclist
 -- ----------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS `FLAPI`.`Grocery_list` (
+CREATE TABLE IF NOT EXISTS `FLAPI`.`Grocery_List` (
   `ID` VARCHAR(50) NULL DEFAULT NULL,
   `userID` VARCHAR(20) NULL DEFAULT NULL,
   `name` VARCHAR(50) NULL DEFAULT NULL,
@@ -28,8 +28,8 @@ CREATE TABLE IF NOT EXISTS `FLAPI`.`Grocery_list` (
   `timeUpdated` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `timeCreated` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP)
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
 
 USE FLAPI;
 

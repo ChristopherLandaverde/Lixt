@@ -17,7 +17,9 @@ app.config['MYSQL_USER'] = config['local']['user']
 app.config['MYSQL_PASSWORD'] = config['local']['password']
 app.config['MYSQL_DB'] = config['local']['database']
 app.config['MYSQL_CURSORCLASS'] = config['local']['cursor']
-#app.config['MYSQL_HOST']='0.0.0.0'
+app.config['MYSQL_HOST'] = 'db'
+app.config['MYSQL_PORT'] = 3306
+
 mysql.init_app(app)
 
 
