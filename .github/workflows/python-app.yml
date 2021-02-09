@@ -28,4 +28,4 @@ jobs:
         pylint src/*.py
     - name: Test with pytest
       run: |
-        pytest
+        pytest src/testapp.py
