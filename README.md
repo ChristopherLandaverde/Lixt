@@ -63,7 +63,7 @@ python testapp.py
 ```
 Run linting:
 ```bash
-pylint ./*.py
+pylint src/*.py
 ```
 
 ## Initalize SQL DB locally
