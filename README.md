@@ -120,33 +120,30 @@ python rest.py
 
 ### RETRIEVE ALL PRODUCTS
 
-Request: `GET http://127.0.0.1:5000/v1/`
+Request: `GET http://0.0.0.0:5000/v1/groceries`
 
 ### Response
 
 ```json
-{
 [
-{
-    "name": "Whoa",
-    "createdAt": "Wed, 13 Jan 2021 16:50:01 GMT",
-    "createdBy": null,
-    "id": "c2be757d-55aa-4a6f-8fcc-44aad50420c2",
-    "lastEdited": "Wed, 13 Jan 2021 21:50:01 GMT",
-    "lastEditedBy": null,
-    "userID": null
+  {
+    "ID": "2c7539a7-ca11-4532-ac91-e6add4ce2b44",
+    "lastEdited": "Tue, 06 Apr 2021 20:17:32 GMT",
+    "lastEditedBy": "Milan",
+    "name": "Chorizo",
+    "timeCreated": "Tue, 06 Apr 2021 20:17:32 GMT",
+    "userID": "Milan"
   },
   {
-    "name": "All Bran",
-    "createdAt": "Wed, 13 Jan 2021 17:26:15 GMT",
-    "createdBy": "Chris",
-    "id": "db21455f-dd9a-45c1-93f0-4c1bda7edc60",
-    "lastEdited": "Wed, 13 Jan 2021 22:26:15 GMT",
-    "lastEditedBy": null,
-    "userID": null
-  },
-  ]
-}
+    "ID": "5cc9c260-135f-4d5b-8100-f27823742c75",
+    "lastEdited": "Tue, 06 Apr 2021 20:18:18 GMT",
+    "lastEditedBy": "Chris",
+    "name": "Sour Cream",
+    "timeCreated": "Tue, 06 Apr 2021 20:18:18 GMT",
+    "userID": "Chris"
+  }
+]
+
 ```
 
 # Create A  GROCERY ITEM
@@ -158,6 +155,11 @@ Response:
 ```json
 
 200 OK
+
+["{GroceryItem}"
+
+ "{userID}"]
+
 ```
 
 
