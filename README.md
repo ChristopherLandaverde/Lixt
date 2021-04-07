@@ -4,7 +4,7 @@
 
 
 
-This is version 1 for Project Lixt.
+This is version 2 for Project Lixt.
 
 Completed Tasks:
 - Developer would be able to recieve all information in the app with a GET request.
@@ -12,6 +12,8 @@ Completed Tasks:
 - Developer will be able to edit a grocery item with a PUT request.
 - Developer will be able to delete a grocery item wtih a GET request.
 - Developer will be able to retrieve all orders POST by a user with api parameter.
+
+
 
 ## How to Install & Run
 
@@ -81,7 +83,7 @@ mysql -u root -p
 ```
 
 ```SQL
-source migration_script.sql
+source migration_script01292021.sql
 ```
 
 SQL Dumps:
@@ -93,8 +95,7 @@ SQL Dumps:
 ## API Endpoint
 
 ```html
-http://127.0.0.1:5000/v1
-
+http://0.0.0.0:5000/v1/groceries
 
 ```
 
@@ -102,17 +103,19 @@ http://127.0.0.1:5000/v1
 
 ```python
 python rest.py
-
-
 ```
 
-## View List
-| Method | Action                                                           | Entry Required                           |
-|--------|------------------------------------------------------------------|------------------------------------------|
-| GET    | Retrieves all items for the shopping list.                       | **name createdBy** Capitalization Required* |
-| PUT    | Creates Items, User,ID, Current Date to add to the shopping list | **name  createdBy** CapitalizationRequired*  |
-| DELETE | Deletes Singular Item Created by Specific User.                  | **name createdBy** CapitalizationRequired*  |
-| PUT    | Edits Singular Item Created by Specific User.                    | **name createdBy** CapitalizationRequired*  |
+|        	|                                                                  	|                	|                 	|                          	|
+|--------	|------------------------------------------------------------------	|----------------	|-----------------	|--------------------------	|
+| Method 	| Action                                                           	| Entry Required 	| Header Required 	| Query Parameter Required 	|
+| GET    	| Retrieves all items from the Grocery list.                       	| N/A            	| N/A             	| N/A                      	|
+| POST   	| Creates Items, User,ID, Current Date to add to the shopping list 	| name           	| N/A             	| userID                   	|
+| DELETE 	| Deletes Singular Item Created by Specific User.                  	| name           	| N/A             	| ID of Grocery Item       	|
+| PUT    	| Edits Singular Item Created by Specific User                     	| name           	| userID          	| ID of Grocery Item       	|
+| GET    	| Retrieves all items from specific user                           	| N/A            	| N/A             	| userID                   	|
+
+
+
 
 
 ### RETRIEVE ALL PRODUCTS
@@ -154,7 +157,7 @@ Response:
 
 ```json
 
-200 OK - "Item has been added Succesfully"
+200 OK
 ```
 
 
@@ -170,7 +173,7 @@ Response:
 
 # Edit A PRODUCT
 
-Request: `PUT http://127.0.0.1:5000/v1/groceries/createdBy`
+Request: `PUT http://127.0.0.1:5000/v1/groceries`
 
 Response
 
