@@ -109,10 +109,10 @@ python rest.py
 |--------	|------------------------------------------------------------------	|----------------	|-----------------	|--------------------------	|
 | Method 	| Action                                                           	| Entry Required 	| Header Required 	| Query Parameter Required 	|
 | GET    	| Retrieves all items from the Grocery list.                       	| N/A            	| N/A             	| N/A                      	|
-| POST   	| Creates Items, User,ID, Current Date to add to the shopping list 	| name           	| N/A             	| userID                   	|
-| DELETE 	| Deletes Singular Item Created by Specific User.                  	| name           	| N/A             	| ID of Grocery Item       	|
-| PUT    	| Edits Singular Item Created by Specific User                     	| name           	| userID          	| ID of Grocery Item       	|
-| GET    	| Retrieves all items from specific user                           	| N/A            	| N/A             	| userID                   	|
+| POST   	| Creates Items, User,ID, Current Date to add to the shopping list 	| **name**           	| N/A             	| **userID**                  	|
+| DELETE 	| Deletes Singular Item Created by Specific User.                  	|  **name**            	| N/A             	| **ID of Grocery Item**       	|
+| PUT    	| Edits Singular Item Created by Specific User                     	|  **name**            	| **userID**          	| **ID of Grocery Item**       	|
+| GET    	| Retrieves all items from specific user                           	| N/A            	| N/A             	| **userID**                 	|
 
 
 
