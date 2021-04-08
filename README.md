@@ -170,7 +170,10 @@ Request: `DELETE  http://127.0.0.1:5000/v1/groceries`
 Response:
 
 ```json
-200 OK - "Item has been succesfully deleted".
+200 OK - [
+  "{ID}",
+  "{Grocery Item}"
+].
 ```
 
 # Edit A PRODUCT
@@ -180,45 +183,30 @@ Request: `PUT http://127.0.0.1:5000/v1/groceries`
 Response
 
 ```json
-200 OK - "Item has been edited succesfully".
+200 OK - "[
+  "{Grocery Item}",
+  "{ID}",
+  "{lastEditedBy}"
+]".
 
 
 ```
 
 # Get All Items Ordered by User
 
-Request: `GET http://127.0.0.1:5000/v1/{createdBy}`
+Request: `GET http://127.0.0.1:5000/v1/{user}`
 
 Response
 
 ```json
-{
-    "name": "Nope",
-    "createdAt": "Wed, 13 Jan 2021 16:39:35 GMT",
-    "createdBy": "Chris",
-    "id": "63a68dbf-a7a4-4d61-9cad-97bc19ebd55b",
-    "lastEdited": "Wed, 13 Jan 2021 21:39:36 GMT",
-    "lastEditedBy": null,
-    "userID": null
-  },
   {
-    "name": "Sour",
-    "createdAt": "Wed, 13 Jan 2021 16:39:39 GMT",
-    "createdBy": "Chris",
-    "id": "08d38769-0076-49fd-95fa-52232d677639",
-    "lastEdited": "Wed, 13 Jan 2021 21:39:39 GMT",
-    "lastEditedBy": null,
-    "userID": null
+    "ID": "dd14ceeb-8296-4051-baa3-95b29f49a145",
+    "lastEdited": "Thu, 08 Apr 2021 07:22:06 GMT",
+    "lastEditedBy": "Milan",
+    "name": "Pizza",
+    "timeCreated": "Wed, 07 Apr 2021 15:23:37 GMT",
+    "userID": "Milan"
   },
-  {
-    "name": "All Bran",
-    "createdAt": "Wed, 13 Jan 2021 17:26:15 GMT",
-    "createdBy": "Chris",
-    "id": "db21455f-dd9a-45c1-93f0-4c1bda7edc60",
-    "lastEdited": "Wed, 13 Jan 2021 22:26:15 GMT",
-    "lastEditedBy": null,
-    "userID": null
-  },
-
+ 
 
 ```
