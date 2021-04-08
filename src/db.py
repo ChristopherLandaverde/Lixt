@@ -23,14 +23,6 @@ app.config['MYSQL_PORT'] = 3306
 mysql.init_app(app)
 
 
-### Heroku Configuration
-
-# app.config['MYSQL_USER'] = config['heroku']['user']
-# app.config['MYSQL_HOST'] = config['heroku']['host']
-# app.config['MYSQL_PASSWORD'] = config['heroku']['password']
-# app.config['MYSQL_DB'] = config['heroku']['database']
-# app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
-
 # Init App
 
 def db_connection():
