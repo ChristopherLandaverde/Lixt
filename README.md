@@ -10,18 +10,17 @@
 
 
 ## Features
-
 - Abilty to Create a User 
 - Ability for the User to CRUD a grocery item.
 - SQL Database to save all your items.
 - A fully functional Flask API
+ 
+## Documentation:
 
-Documentation:
+- [Specs](https://github.com/ChristopherLandaverde/Lixt/blob/main/specs.md).
+- [Website](https://admiring-perlman-b68079.netlify.app).
 
-- Specs
-- Website
-
-Future Plans:
+## Future Plans:
 - User Authentication with JWT
 - Ability to filter by date
 - More API Endpoints
