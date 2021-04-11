@@ -51,7 +51,7 @@ def delete_gaitems():
         cursor_request("""DELETE FROM Grocery_List WHERE ID=%s AND name =%s """,
             (eventid_queryparam,new_item))
         return jsonify(eventid_queryparam,new_item),200
-    return "No item has been deleted",500
+    #return "No item has been deleted",500
 
 # Edits on an item from the Grocery List.
 @app.route("/v1/groceries",methods=["PUT"])
@@ -64,7 +64,7 @@ def put_gaitems():
             SET name=%s,lastEditedBy=%s WHERE ID=%s""",
             (new_item,item_created_by,eventid_queryparam))
         return jsonify(new_item,eventid_queryparam,item_created_by),200
-    return "No item has been edited",500
+    #return "No item has been edited",500
 
 # Retreives all grocery list from the Users.
 @app.route("/v1/users",methods=["GET"])
@@ -76,7 +76,7 @@ def single_item():
                                   WHERE userID='%s'""" %
                                   (userid_queryparam))
         return user_items
-    return "No item has been found",500
+    #return "No item has been found",500
 #server
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0')
