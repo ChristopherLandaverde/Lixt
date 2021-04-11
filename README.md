@@ -8,8 +8,6 @@
 <p align="center"><strong>Lixt is react-native application that allows for users to be able <br>to share their of grocery items with their friends and families.</strong></p>
 
 
-(![ezgif-4-6ca2fe676937](https://user-images.githubusercontent.com/22153509/114289095-48374480-9a43-11eb-910f-30c4a980d33c.gif)
-
 
 ## Features
 - Abilty to Create a User 
@@ -27,4 +25,6 @@
 - Ability to filter by date
 - More API Endpoints
 
+## Example View 
 
+(![ezgif-4-6ca2fe676937](https://user-images.githubusercontent.com/22153509/114289095-48374480-9a43-11eb-910f-30c4a980d33c.gif)
