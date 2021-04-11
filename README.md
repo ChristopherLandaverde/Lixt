@@ -27,4 +27,6 @@
 
 ## Example View 
 
-(![ezgif-4-6ca2fe676937](https://user-images.githubusercontent.com/22153509/114289095-48374480-9a43-11eb-910f-30c4a980d33c.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/22153509/114289095-48374480-9a43-11eb-910f-30c4a980d33c.gif" alt="animated" />
+</p>
