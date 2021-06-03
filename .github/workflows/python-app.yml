@@ -26,3 +26,8 @@ jobs:
       run: |
         # stop the build if there are Python lint errors
         pylint src/*.py
+        name: Pytest
+        run: |
+        # Check to see if the test are running
+        pytest src/test.py
+    
