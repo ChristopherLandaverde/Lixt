@@ -1,179 +1,32 @@
-# Lixt
-
-This is version 1 for Project Lixt.
-
-Completed Tasks:
-- Developer would be able to recieve all information in the app with a GET request.
-- Developer will be able to post a grocery item with a POST request.
-- Developer will be able to edit a grocery item with a PUT request.
-- Developer will be able to delete a grocery item wtih a GET request.
-- Developer will be able to retrieve all orders POST by a user with api parameter.
-
-## How to Install & Run
-
-Make Virtual Environment.
-
-```python
-virtualenv {virtual environment name}
-```
-
-Install and update using pip:
-```python
-pip install -r requirements.txt
-```
-Requirements
-```python
-python v3.9.1
-mysql v8.0.22
-```
-
-Run Server:
-```python
-python app.py
-```
-
-Run linting:
-```bash
-pylint src/*.py
-```
-
-## Initalize SQL DB locally
-
-** Must be run within MySQL shell and not bash**
-
-Migration Script:
-
-```shell
-mysql -u root -p
-```
-
-```SQL
-source migration_script.sql
-```
-
-SQL Dumps:
-
-```shell
- mysql -u root -p FLAPI > flapischema.sql
-```
-
-## API Endpoint
-
-```html
-http://127.0.0.1:5000/v1
 
 
-```
+<p align="center">
+  <img  src="https://user-images.githubusercontent.com/22153509/113756574-8fd66d00-96df-11eb-9d8b-66b3feffafc3.png">
+</p>
 
 
-## View List
-| Method | Action                                                           | Entry Required                           |
-|--------|------------------------------------------------------------------|------------------------------------------|
-| GET    | Retrieves all items for the shopping list.                       | **name createdBy** Capitalization Required* |
-| PUT    | Creates Items, User,ID, Current Date to add to the shopping list | **name  createdBy** CapitalizationRequired*  |
-| DELETE | Deletes Singular Item Created by Specific User.                  | **name createdBy** CapitalizationRequired*  |
-| PUT    | Edits Singular Item Created by Specific User.                    | **name createdBy** CapitalizationRequired*  |
+<p align="center"><strong>Lixt is react-native application that allows for users to be able <br>to share their of grocery items with their friends and families.</strong></p>
 
 
-### RETRIEVE ALL PRODUCTS
 
-Request: `GET http://127.0.0.1:5000/v1/`
+## Features
+- Abilty to Create a User 
+- Ability for the User to CRUD a grocery item.
+- SQL Database to save all your items.
+- A fully functional Flask API
+ 
+## Documentation:
 
-### Response
+- [Specs](https://github.com/ChristopherLandaverde/Lixt/blob/main/specs.md).
+- [Website](https://admiring-perlman-b68079.netlify.app).
 
-```json
-{
-[
-{
-    "name": "Whoa",
-    "createdAt": "Wed, 13 Jan 2021 16:50:01 GMT",
-    "createdBy": null,
-    "id": "c2be757d-55aa-4a6f-8fcc-44aad50420c2",
-    "lastEdited": "Wed, 13 Jan 2021 21:50:01 GMT",
-    "lastEditedBy": null,
-    "userID": null
-  },
-  {
-    "name": "All Bran",
-    "createdAt": "Wed, 13 Jan 2021 17:26:15 GMT",
-    "createdBy": "Chris",
-    "id": "db21455f-dd9a-45c1-93f0-4c1bda7edc60",
-    "lastEdited": "Wed, 13 Jan 2021 22:26:15 GMT",
-    "lastEditedBy": null,
-    "userID": null
-  },
-  ]
-}
-```
+## Future Plans:
+- User Authentication with JWT
+- Ability to filter by date
+- More API Endpoints
 
-# Create A  GROCERY ITEM
+## Example View 
 
-Request : `POST http://127.0.0.1:5000/v1`
-
-Response:
-
-```json
-
-200 OK - "Item has been added Succesfully"
-```
-
-
-# DELETE A PRODUCT
-
-Request: `DELETE  http://127.0.0.1:5000/v1`
-
-Response:
-
-```json
-200 OK - "Item has been succesfully deleted".
-```
-
-# Edit A PRODUCT
-
-Request: `PUT http://127.0.0.1:5000/v1`
-
-Response
-
-```json
-200 OK - "Item has been edited succesfully".
-
-
-```
-
-# Get All Items Ordered by User
-
-Request: `GET http://127.0.0.1:5000/v1/{createdBy}`
-
-Response
-
-```json
-{
-    "name": "Nope",
-    "createdAt": "Wed, 13 Jan 2021 16:39:35 GMT",
-    "createdBy": "Chris",
-    "id": "63a68dbf-a7a4-4d61-9cad-97bc19ebd55b",
-    "lastEdited": "Wed, 13 Jan 2021 21:39:36 GMT",
-    "lastEditedBy": null,
-    "userID": null
-  },
-  {
-    "name": "Sour",
-    "createdAt": "Wed, 13 Jan 2021 16:39:39 GMT",
-    "createdBy": "Chris",
-    "id": "08d38769-0076-49fd-95fa-52232d677639",
-    "lastEdited": "Wed, 13 Jan 2021 21:39:39 GMT",
-    "lastEditedBy": null,
-    "userID": null
-  },
-  {
-    "name": "All Bran",
-    "createdAt": "Wed, 13 Jan 2021 17:26:15 GMT",
-    "createdBy": "Chris",
-    "id": "db21455f-dd9a-45c1-93f0-4c1bda7edc60",
-    "lastEdited": "Wed, 13 Jan 2021 22:26:15 GMT",
-    "lastEditedBy": null,
-    "userID": null
-  },
-
-
-```
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/22153509/114289095-48374480-9a43-11eb-910f-30c4a980d33c.gif" alt="animated" />
+</p>
