@@ -25,5 +25,5 @@ lint:
 	pylint src/db.py;
 
 pytest:
-	pytest src/testapp.py
+	pytest ./src/test.py
 
