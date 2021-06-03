@@ -52,8 +52,10 @@ END;//
 DELIMITER ;
 
 ALTER TABLE GROCERY_LIST DROP LastEdited;
-alter table Grocery_List drop column createdAt;
+Alter table Grocery_List drop column createdAt;
 Alter table Grocery_list rename column timeUpdated to lastEdited;
+Alter table Grocery_List drop column createdBy;
+drop trigger updatsxe_USERID;
 
 
 -- ----------------------------------------------------------------------------
