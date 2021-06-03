@@ -1,5 +1,5 @@
 
-
+[![Python application](https://github.com/ChristopherLandaverde/Lixt/actions/workflows/python-app.yml/badge.svg)](https://github.com/ChristopherLandaverde/Lixt/actions/workflows/python-app.yml)
 <p align="center">
   <img  src="https://user-images.githubusercontent.com/22153509/113756574-8fd66d00-96df-11eb-9d8b-66b3feffafc3.png">
 </p>
