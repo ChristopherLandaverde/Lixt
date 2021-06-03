@@ -26,10 +26,6 @@ jobs:
       run: |
         # stop the build if there are Python lint errors
         pylint src/*.py
-    - name: Unit Test for Pytest
-      run: |
-        # stop the build if there are Python lint errors
-        pytest src/test.py
     
  
     
