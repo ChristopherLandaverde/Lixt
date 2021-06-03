@@ -62,29 +62,6 @@ def delete_gaitems():
         return jsonify(eventid_queryparam, new_item), 200
     return "No item has been deleted", 500
 
-# Post item into Grocery List
-
-@app.route("/v1/groceries",methods=["POST"])
-def post_gaitems():
-    if request.mimetype == 'application/json':
-        new_item=json_body('name')
-        item_created_by=request.headers['userID']
-        cursor_request("""INSERT INTO Grocery_List (Name,UserID,ID) VALUES (%s,%s,%s)""",
-            (new_item,item_created_by,uuid.uuid4()))
-        return jsonify(new_item,item_created_by),200
-    return ("No item has been added"),500
-
-# Delete items from the grocery list
-@app.route("/v1/groceries",methods=["DELETE"])
-def delete_gaitems():
-    if request.mimetype == 'application/json':
-        eventid_queryparam = request.args.get('ID')
-        new_item=json_body('name')
-        cursor_request("""DELETE FROM Grocery_List WHERE ID=%s AND name =%s """,
-            (eventid_queryparam,new_item))
-        return jsonify(eventid_queryparam,new_item),200
-    return "No item has been deleted",500
-
 # Edits on an item from the Grocery List.
 @app.route("/v1/groceries",methods=["PUT"])
 def put_gaitems():
@@ -120,7 +97,4 @@ def single_item():
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0")
     return "No item has been found",500
-#server
-if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0')
-    
+
