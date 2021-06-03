@@ -10,8 +10,8 @@ app = Flask(__name__)
 
 config = configparser.ConfigParser()
 config.read('.env')
-path = '/'.join((os.path.abspath(__file__).replace('\\', '/')).split('/')[:-1])
-config.read(os.path.join(path, '.env'))
+PATH = '/'.join((os.path.abspath(__file__).replace('\\', '/')).split('/')[:-1])
+config.read(os.path.join(PATH, '.env'))
 
 mysql = MySQL()
 
