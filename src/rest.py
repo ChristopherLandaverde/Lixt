@@ -29,9 +29,14 @@ def get_gaitems():
     if request.mimetype == 'application/json':
         all_items =fetchall_cursor("""SELECT * FROM Grocery_List""")
         return all_items
+    else:
+            new_items =fetchall_cursor("""SELECT * FROM Grocery_List""")
+            return new_items
+
     return ("Method is not JSON, please submit JSON"),500
 
 # Post item into Grocery List
+
 @app.route("/v1/groceries",methods=["POST"])
 def post_gaitems():
     if request.mimetype == 'application/json':
