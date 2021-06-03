@@ -41,5 +41,3 @@ def test_delete():
         content_type="application/json",
     )
     assert response.status_code == 200
-
-
