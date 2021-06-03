@@ -25,13 +25,15 @@ def get_gaitems():
     if request.mimetype == 'application/json':
         all_items =fetchall_cursor("""SELECT * FROM Grocery_List""")
         return all_items
-    return ("Method is not JSON, please submit JSON"),500
+    else:
+            new_items =fetchall_cursor("""SELECT * FROM Grocery_List""")
+            return new_items
 @app.route("/v1/groceries",methods=["POST"])
 def post_gaitems():
     if request.mimetype == 'application/json':
         new_item=json_body('name')
         item_created_by=request.headers['userID']
-        cursor_request("""INSERT INTO Grocery_List (name,createdBy,ID) VALUES (%s,%s,%s)""",
+        cursor_request("""INSERT INTO Grocery_List (Name,UserID,ID) VALUES (%s,%s,%s)""",
             (new_item,item_created_by,uuid.uuid4()))
         return jsonify(new_item,item_created_by),200
     return ("No item has been added"),500
