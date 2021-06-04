@@ -26,10 +26,6 @@ jobs:
       run: |
         # stop the build if there are Python lint errors
         pylint src/*.py
-    - name: Test with Pytest
-      run: |
-        # stop if the test don't work.
-        pytest ./src/test.py
-    
+
  
     
