@@ -1,5 +1,5 @@
-import configparser
-import os
+#import configparser
+#import os
 from flask import Flask
 from flask_mysqldb import MySQL
 
